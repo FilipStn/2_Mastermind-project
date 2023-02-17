@@ -39,7 +39,7 @@ def start_spel():
 
 def opslaan_speelveld():
     """dict aanmaken om met de key de row aanmaken en de value is de ingevoerde waarde van de speler."""
-
+    # key = poging
 
 
 def update_speelveld():
