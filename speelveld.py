@@ -15,7 +15,7 @@ def geheime_code():
     return choice
 
 
-geheime_code()
+# geheime_code()
 
 
 def start_spel():
