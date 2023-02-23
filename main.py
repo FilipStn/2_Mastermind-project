@@ -22,7 +22,7 @@ def gok_mens():
         for p in eerdere_pogingen:
             print(p, end='\n')
         # speelveld.displayboard(eerdere_pogingen)
-        playing = speelveld.einde_spel(poging, geheime_code, huidige_antwoord)
+        playing = speelveld.einde_spel(poging, geheime_code, huidige_vraag)
 
 
 # Als de simpele strategie wordt aangeroepen
@@ -44,15 +44,18 @@ def ai1_strategie_simpel():
         playing = speelveld.einde_spel(poging, geheime_code, huidige_antwoord)
 
 
-print('Welkom bij Mastermind! Je krijgt de opties uit "a, b, c, d, e, f".\n'
-      'Bij dit spel is het de bedoeling de code te kraken door de juiste combinatie te maken.')
-print("Het is mogelijk om de computer het spel te laten oplossen, maar uiteraard is het leuker om zelf te spelen."
-      "Hiervoor zijn 3 verschillende algoritmes waar je uit kunt kiezen."
-      "Door in kleine letters 'ai1', 'ai2', 'ai3' of 'mens' te typen maak je een keuze")
+def kies_game_mode():
+    print('Welkom bij Mastermind! Je krijgt de opties uit "a, b, c, d, e, f".\n'
+          'Bij dit spel is het de bedoeling de code te kraken door de juiste combinatie te maken.')
+    print("Het is mogelijk om de computer het spel te laten oplossen, maar uiteraard is het leuker om zelf te spelen."
+          "Hiervoor zijn 3 verschillende algoritmes waar je uit kunt kiezen."
+          "Door in kleine letters 'ai1', 'ai2', 'ai3' of 'mens' te typen maak je een keuze")
+    game_mode = input('Kies hier voor welke optie je kiest: ').lower()
 
-game_mode = input('Kies hier voor welke optie je kiest: ').lower()
+    if game_mode == 'mens':
+        gok_mens()
+    elif game_mode == 'ai1':
+        ai1_strategie_simpel()
 
-if game_mode == 'mens':
-    gok_mens()
-elif game_mode == 'ai1':
-    ai1_strategie_simpel()
+
+kies_game_mode()
