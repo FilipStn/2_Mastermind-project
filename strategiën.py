@@ -1,5 +1,6 @@
 import itertools
-from itertools import combinations
+import interacties as interactie
+# import speelveld
 
 def alle_combinaties():
     """
@@ -9,14 +10,7 @@ def alle_combinaties():
     """
     colors = ['a', 'b', 'c', 'd', 'e', 'f']
 
-    combinaties = []
-
-    for combinatie in itertools.combinations_with_replacement(colors, 4):
-        combinaties.append(combinatie)
-
-    # for r in range(len(colors) + 1):
-    #     for combinatie in itertools.combinations(colors, r):
-    #         combinaties.append(combinatie)
+    combinaties = list(itertools.product(colors, repeat=4))
 
     return combinaties
 
@@ -24,16 +18,27 @@ def alle_combinaties():
 print(len(alle_combinaties()))
 
 
-def alle_antwoorden():
+def alle_antwoorden(alle_combinaties):
     """
     Deze functie onthoudt alle al gegeven antwoorden
     :return: copy van de gemaakte lijst
     """
+    # interacties.antwoord(stel_vraag, code)
 
 
-def reduceer_zoekruimte():
+
+def reduceer_zoekruimte(resterende_combinaties, antwoord, stel_vraag):
     """"""
+    nieuwe_zoekruimte = []
 
+    for code in resterende_combinaties:
+        if antwoord == interactie.antwoord(interactie.antwoord()[2], interactie.stel_vraag(speler)):
+            nieuwe_zoekruimte.append(code)
+
+    return nieuwe_zoekruimte
 
 def simpele_strategie():
     """"""
+    keuze = reduceer_zoekruimte()[0]
+
+    return keuze
