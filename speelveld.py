@@ -1,4 +1,5 @@
 import random
+import main
 
 import interacties
 from interacties import *
@@ -75,21 +76,26 @@ def update_speelveld():
     """Eerdere pogingen tonen"""
 
 
-def einde_spel(gewonnen,  code):
+def einde_spel(poging, code ,vraag):
     """"""
-
-    if gewonnen:
+    if vraag == code:
         print(f'Gefeliceerd, je hebt de geheime code geraden in {poging} pogingen.')
 
-
+    elif poging == 9 and vraag != code:
         print(f'Helaas heb je het niet geraden in 8 pogingen. Het juiste antwoord was: {code}.')
+
+    # if gewonnen:
+    #     print(f'Gefeliceerd, je hebt de geheime code geraden in {poging} pogingen.')
+    #
+    # else:
+    #     print(f'Helaas heb je het niet geraden in 8 pogingen. Het juiste antwoord was: {code}.')
 
     print(f'Wil je het nog een keer proberen?')
 
     keuze = input('Voer hier uw keuze in: ').lower()
 
     if keuze == 'ja':
-        start_spel()
+        main.kies_game_mode()
 
     else:
         print('Fijne dag!')
