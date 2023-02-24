@@ -76,13 +76,17 @@ def update_speelveld():
     """Eerdere pogingen tonen"""
 
 
-def einde_spel(poging, code ,vraag):
+def einde_spel(poging,antwoord):
     """"""
-    if vraag == code:
+    if antwoord == (4, 0):
         print(f'Gefeliceerd, je hebt de geheime code geraden in {poging} pogingen.')
-
-    elif poging == 9 and vraag != code:
+        return False
+    elif poging == 9:
         print(f'Helaas heb je het niet geraden in 8 pogingen. Het juiste antwoord was: {code}.')
+        return False
+
+    return True
+
 
     # if gewonnen:
     #     print(f'Gefeliceerd, je hebt de geheime code geraden in {poging} pogingen.')
@@ -90,16 +94,16 @@ def einde_spel(poging, code ,vraag):
     # else:
     #     print(f'Helaas heb je het niet geraden in 8 pogingen. Het juiste antwoord was: {code}.')
 
-    print(f'Wil je het nog een keer proberen?')
-
-    keuze = input('Voer hier uw keuze in: ').lower()
-
-    if keuze == 'ja':
-        return True
-
-    else:
-        print('Fijne dag!')
-        return False
+    # print(f'Wil je het nog een keer proberen?')
+    #
+    # keuze = input('Voer hier uw keuze in: ').lower()
+    #
+    # if keuze == 'ja':
+    #     return True
+    #
+    # else:
+    #     print('Fijne dag!')
+    #     return False
 
 
 
