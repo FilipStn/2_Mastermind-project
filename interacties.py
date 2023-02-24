@@ -3,13 +3,22 @@ import strategiën
 def antwoord(code, stel_vraag):
     """
     # Source: https://github.com/peterstark72/mastermind/blob/master/mastermind.py
-    :param code:
-    :param stel_vraag:
-    :return:
+    Deze code komt van de Github van Lin:
+    https://github.com/LinaBlijlevenHU/StructuredProgramming2023/commit/0d7fd46fdc07529685a2e45e80b5258c396816c0
+    de maker van de werkende code stat bij source.
+
+    Functie kijkt welke elementen in de code wel en niet goed staan.
+    Als ze goed staan returned de functie het aantal zwarte.
+    Als ze erin zitten maar niet op de juiste plek het aantal witte.
+    Als het helemaal niet goed is wordt er niks gereturned.
+    :param code: de geheime code
+    :param stel_vraag: de huidige vraag om te controleren
+    :return: tupel
     """
-    zwart, wit = 0, 0
-    lst_idx = -1
-    gebruikt = []
+    "onder de puntjes staat mijn vorige code die niet helemaal werkend te krijgen was."
+    # zwart, wit = 0, 0
+    # lst_idx = -1
+    # gebruikt = []
 
     # for element in stel_vraag:
     #     if element in code:
@@ -76,39 +85,6 @@ def antwoord(code, stel_vraag):
     return (blacks, whites)
 
 
-# def stel_vraag(speler):
-#     """
-#     Kijk of de input een speler of computer is.
-#     Als de speler een mens is opent functie _mens_vraag().
-#     Anders opent _ai_vraag()
-#
-#     :param speler: mens, ai
-#     :return:
-#     """
-#
-#     # als de invoer van wie er speelt gelijk is aan 'mens',
-#     # opent de functie '_mens_vraag()'.
-#     if speler == 'mens':
-#         mens = mens_vraag()
-#         return mens
-#
-#     # als de invoer van wie er speelt gelijk is aan 'computer',
-#     # opent de functie '_ai_vraag()'.
-#     elif speler == 'ai1':
-#         ai1 = _ai1_vraag()
-#         return ai1
-#
-#     elif speler == 'ai2':
-#         ai2 = _ai2_vraag()
-#         return ai2
-#
-#     elif speler == 'ai3':
-#         ai3 = _ai3_vraag()
-#         return ai3
-def wacht_speler():
-    wacht = input('Druk enter om verder te gaan.')
-    return wacht
-
 def mens_vraag():
     """
     Deze functie vraagt input aan de speler.
@@ -116,28 +92,9 @@ def mens_vraag():
 
     :return: vraag.split()
     """
-    # vraag input van de speler
+    # vraag input van de speler, maakt deze lowercase en stript op overbodige spaties
     vraag = input("Voer hier een mogelijke combinatie in: ").lower().strip()
 
     # return de vraag met een split op de spatie
     return vraag.split(' ')
-
-
-def _ai1_vraag():
-    """"""
-    vraag = strategiën.simpele_strategie()
-
-    return vraag
-
-
-def _ai2_vraag():
-    """"""
-
-
-def _ai3_vraag():
-    """"""
-
-
-def afsluiten():
-    """"""
 
