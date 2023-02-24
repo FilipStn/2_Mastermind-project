@@ -22,7 +22,7 @@ def gok_mens():
         for p in eerdere_pogingen:
             print(p, end='\n')
         # speelveld.displayboard(eerdere_pogingen)
-        playing = speelveld.einde_spel(poging, geheime_code, huidige_vraag)
+        playing = speelveld.einde_spel(poging, huidige_antwoord, geheime_code)
 
     kies_game_mode()
 
@@ -60,7 +60,7 @@ def ai1_strategie_simpel():
         resterende_combinaties = strategiën.reduceer_zoekruimte(resterende_combinaties, huidige_antwoord, huidige_vraag)
 
         # als deze waarde wijzigt naar False stopt het spel
-        playing = speelveld.einde_spel(poging, huidige_antwoord)
+        playing = speelveld.einde_spel(poging, huidige_antwoord, geheime_code)
 
     # print de eerdere pogingen onder elkaar
     for p in eerdere_pogingen:
@@ -111,7 +111,7 @@ def ai2_worst_case():
         resterende_combinaties = strategiën.reduceer_zoekruimte(resterende_combinaties, huidige_antwoord, huidige_vraag)
 
         # als deze waarde wijzigt naar False stopt het spel
-        playing = speelveld.einde_spel(poging, huidige_antwoord)
+        playing = speelveld.einde_spel(poging, huidige_antwoord, geheime_code)
 
     # print de eerdere pogingen onder elkaar
     for p in eerdere_pogingen:
@@ -154,7 +154,7 @@ def ai3_random_choice():
         resterende_combinaties = strategiën.reduceer_zoekruimte(resterende_combinaties, huidige_antwoord, huidige_vraag)
 
         # als deze waarde wijzigt naar False stopt het spel
-        playing = speelveld.einde_spel(poging, huidige_antwoord)
+        playing = speelveld.einde_spel(poging, huidige_antwoord, geheime_code)
 
     # print de eerdere pogingen onder elkaar
     for p in eerdere_pogingen:
