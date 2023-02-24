@@ -17,8 +17,8 @@ def gok_mens():
         # print(huidige_vraag)
         huidige_antwoord = interacties.antwoord(geheime_code, huidige_vraag)
         # print(huidige_antwoord)
-        eerdere_pogingen.append(f'{huidige_vraag}: {huidige_antwoord}')
         poging += 1
+        speelveld.opslaan_speelveld(eerdere_pogingen, poging, huidige_vraag, huidige_antwoord)
         for p in eerdere_pogingen:
             print(p, end='\n')
         # speelveld.displayboard(eerdere_pogingen)

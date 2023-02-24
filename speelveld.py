@@ -1,5 +1,5 @@
 import random
-import main
+# import main
 
 import interacties
 from interacties import *
@@ -95,11 +95,11 @@ def einde_spel(poging, code ,vraag):
     keuze = input('Voer hier uw keuze in: ').lower()
 
     if keuze == 'ja':
-        main.kies_game_mode()
+        return True
 
     else:
         print('Fijne dag!')
-    exit()
+        return False
 
 
 
