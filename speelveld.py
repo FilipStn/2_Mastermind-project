@@ -1,24 +1,22 @@
 import random
-# import main
 
-import interacties
-from interacties import *
-# itertools.product
 
 # sla deze functie op in een variabelen
 def geheime_code():
+    """
+    Genereert de geheime code voor het raden.
+    :return: list
+    """
     colors = ['a', 'b', 'c', 'd', 'e', 'f']
     # random keuze van 4 elementen uit 'colors'
     choice = random.choices(colors, k=4)
     # voor debuggen
-    print(choice)
+    # print(choice)
 
     return choice
 
 
-# geheime_code()
-
-
+"De functie onder pijltjes was hoe ik eerst het spel starten, dit gaf error's over circular import."
 # def start_spel():
 #     """
 #     deze functie moet het spel starten
@@ -59,30 +57,39 @@ def geheime_code():
 
 
 def opslaan_speelveld(eerdere_pogingen, poging, vraag, antwoord):
-    """dict aanmaken om met de key de row aanmaken en de value is de ingevoerde waarde van de speler."""
-
+    """
+    Lijst aanmaken poging(beurtnummer), vraag en het antwoord toevoegd aan de bestaande lijst 'eerdere_pogingen'.
+    :param eerdere_pogingen: bestaande lijst met eerdere pogingen
+    :param poging: nummer van de beurt
+    :param vraag: de gok die gedaan is
+    :param antwoord: wat wel en niet goed was
+    :return: geüpdatet lijst
+    """
+    # voeg aan de bestaande lijst een f-string met de waardes: poging, vraag en antwoord.
     eerdere_pogingen.append(f'{poging}: {vraag} : {antwoord}')
 
     return eerdere_pogingen
 
 
-def ai_simpele_strategie():
-    ronde = 1
-
-    nieuwe_zoekruimte = []
-
-
-def update_speelveld():
-    """Eerdere pogingen tonen"""
-
-
-def einde_spel(poging,antwoord):
-    """"""
+def einde_spel(poging, antwoord, code):
+    """
+    Vergelijk het antwoord, is deze 4,0 dan return False om het spel te stoppen.
+    Hetzelfde geldt voor de aantal pogingen,
+    als deze gelijk staan aan 9 is het niet in 8 pogingen gelukt. Returned False om het spel te stoppen.
+    Als False gereturned word, break de while loop.
+    :param poging: poging nummer
+    :param antwoord: zwarte en witte pinnen.
+    :return: bool
+    """
+    # vergelijk antwoord met de waardes die eruit moeten komen, 4,0 is spel gewonnen.
     if antwoord == (4, 0):
         print(f'Gefeliceerd, je hebt de geheime code geraden in {poging} pogingen.')
+        # return False om uit de while loop te breken.
         return False
+    # als poging gelijk is aan 9 is het niet gelukt om het binnen 8 beurten te doen en is het spel verloren.
     elif poging == 9:
         print(f'Helaas heb je het niet geraden in 8 pogingen. Het juiste antwoord was: {code}.')
+        # return False om uit de while loop te breken.
         return False
 
     return True
@@ -104,9 +111,3 @@ def einde_spel(poging,antwoord):
     # else:
     #     print('Fijne dag!')
     #     return False
-
-
-
-
-# main
-# start_spel()
