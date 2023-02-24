@@ -73,7 +73,7 @@ def antwoord(code, stel_vraag):
             awarded_duplicates.add(color)
 
     # Geef het resultaat terug als tuple
-    return blacks, whites
+    return (blacks, whites)
 
 
 # def stel_vraag(speler):
@@ -105,7 +105,9 @@ def antwoord(code, stel_vraag):
 #     elif speler == 'ai3':
 #         ai3 = _ai3_vraag()
 #         return ai3
-
+def wacht_speler():
+    wacht = input('Druk enter om verder te gaan.')
+    return wacht
 
 def mens_vraag():
     """
