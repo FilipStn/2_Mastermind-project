@@ -7,7 +7,9 @@ Studentnummer: 1831554
 Klas: AI-V1A
 
 
-In dit project maak ik het spel Mastermind in Python3. Het spel is speelbaar in de Command Line Interface. 
+In dit project maak ik het spel Mastermind in Python3, dit moet je dan ook op je computer hebben om het spel te spelen. Dit kun je downloaden via: https://www.python.org/downloads/
+
+Het spel is speelbaar in de Command Line Interface. 
 
 In het bestand 'main.py' staat de werkende code, je hebt alleen wel de andere .py bestanden nodig om de main normaal te kunnen runnen. 
 Download alle bestanden en hou dit in 1 directory op je computer. 
