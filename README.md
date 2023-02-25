@@ -1,7 +1,9 @@
 # Mastermind Project
 
-Author: Filip Steenbergen \n
+Author: Filip Steenbergen
+
 Studentnummer: 1831554
+
 Klas: AI-V1A
 
 In dit project maak ik het spel Mastermind in Python3. Het spel is speelbaar in de Command Line Interface. 
