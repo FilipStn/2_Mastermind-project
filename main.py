@@ -30,7 +30,7 @@ def gok_mens():
 # Als de simpele strategie wordt aangeroepen
 def ai1_strategie_simpel():
     """
-    Deze functie roept alle benodigde functies voor de 2e ai vorm op.
+    Deze functie roept alle benodigde functies voor de 1e ai vorm op.
     Vervolgens worden de waardes hiervan opgeslagen in variabelen.
     In de while loop herhalen alle stappen zich
     zodat de uiteindelijke ai keuzes minder worden.
